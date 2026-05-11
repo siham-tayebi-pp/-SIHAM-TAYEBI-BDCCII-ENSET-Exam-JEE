@@ -25,8 +25,8 @@ public abstract class ContratAssurance {
 
     private LocalDate dateValidation;
     private double montantCotisation;
-    private int dureeContrat;          // en mois
-    private double tauxCouverture;     // en pourcentage
+    private int dureeContrat;          // b les  mois
+    private double tauxCouverture;     // b les  pourcentage
 
     @ManyToOne
     @JoinColumn(name = "client_id")

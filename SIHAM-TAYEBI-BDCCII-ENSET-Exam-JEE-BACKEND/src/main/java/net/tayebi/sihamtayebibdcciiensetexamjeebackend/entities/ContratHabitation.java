@@ -14,5 +14,5 @@ public class ContratHabitation extends ContratAssurance {
     private TypeLogement typeLogement;   // APPARTEMENT, MAISON, LOCAL_COMMERCIAL
 
     private String adresse;
-    private double superficie;           // en m²
+    private double superficie;           // b m²
 }

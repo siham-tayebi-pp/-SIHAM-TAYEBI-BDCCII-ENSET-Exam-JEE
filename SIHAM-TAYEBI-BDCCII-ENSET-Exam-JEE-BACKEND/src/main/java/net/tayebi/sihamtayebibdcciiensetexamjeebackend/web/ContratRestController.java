@@ -38,7 +38,7 @@ public class ContratRestController {
         return assuranceService.getContratsByStatut(statut);
     }
 
-    // ── Création des 3 types de contrats ──
+    // ─ Création des 3 types de contrats
     @PostMapping("/contrats/automobile")
     @PreAuthorize("hasAnyAuthority('SCOPE_ROLE_EMPLOYE','SCOPE_ROLE_ADMIN')")
     public ContratAssuranceDTO saveAutomobile(@RequestBody ContratAutomobileDTO dto)
@@ -60,7 +60,7 @@ public class ContratRestController {
         return assuranceService.saveContrat(dto);
     }
 
-    // ── Changement de statut ──
+    // ── Changement de statut
     @PatchMapping("/contrats/{id}/statut")
     @PreAuthorize("hasAnyAuthority('SCOPE_ROLE_EMPLOYE','SCOPE_ROLE_ADMIN')")
     public ContratAssuranceDTO updateStatut(@PathVariable Long id,
@@ -75,7 +75,7 @@ public class ContratRestController {
         assuranceService.deleteContrat(id);
     }
 
-    // ── Paiements ──
+    // ── Paiements
     @GetMapping("/contrats/{id}/paiements")
     @PreAuthorize("hasAnyAuthority('SCOPE_ROLE_CLIENT','SCOPE_ROLE_EMPLOYE','SCOPE_ROLE_ADMIN')")
     public List<PaiementDTO> getPaiements(@PathVariable Long id) {

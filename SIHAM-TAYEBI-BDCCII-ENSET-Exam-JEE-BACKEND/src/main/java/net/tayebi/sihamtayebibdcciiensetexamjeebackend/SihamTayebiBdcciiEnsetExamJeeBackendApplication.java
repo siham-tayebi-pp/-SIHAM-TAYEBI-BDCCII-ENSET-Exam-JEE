@@ -6,12 +6,13 @@ import net.tayebi.sihamtayebibdcciiensetexamjeebackend.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class SihamTayebiBdcciiEnsetExamJeeBackendApplication {
 
     public static void main(String[] args) {
@@ -25,7 +26,7 @@ public class SihamTayebiBdcciiEnsetExamJeeBackendApplication {
             PaiementRepository paiementRepository) {
         return args -> {
 
-            // ── Créer 5 clients ──
+            // ── Cree 5 clients ──
             List<String> noms = List.of("Ahmed Alaoui", "Fatima Benali",
                     "Youssef Tazi", "Meryem Idrissi", "Karim Zidane");
             noms.forEach(nom -> {
@@ -35,7 +36,7 @@ public class SihamTayebiBdcciiEnsetExamJeeBackendApplication {
                 clientRepository.save(c);
             });
 
-            // ── Créer des contrats pour chaque client ──
+            // ── Créeee des contrats pour chaque client ──
             clientRepository.findAll().forEach(client -> {
 
                 // Contrat Automobile

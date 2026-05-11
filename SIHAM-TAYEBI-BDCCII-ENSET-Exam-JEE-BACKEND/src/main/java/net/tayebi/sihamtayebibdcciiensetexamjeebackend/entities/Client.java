@@ -15,6 +15,6 @@ public class Client {
     private String email;
 
     @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // évite boucle JSON infinie
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // évite la boucle JSON infinie f lafichage
     private List<ContratAssurance> contrats;
 }
